@@ -1,0 +1,11 @@
+*{
+box-sizing: border-box;
+margin:0;
+padding:0;
+}
+
+html,body{
+font: 14px/18px Helvetica, Verdana, sans-serif;
+min-height: 100%;
+width: 100%
+}
