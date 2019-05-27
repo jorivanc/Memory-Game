@@ -1,11 +1,78 @@
-*{
-box-sizing: border-box;
-margin:0;
-padding:0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html,body{
-font: 14px/18px Helvetica, Verdana, sans-serif;
-min-height: 100%;
-width: 100%
+html, body{
+  font: 14px/18px Helvetica, Verdana, sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+h1{
+  padding: 1em;
+}
+.container{
+  width: 100%;
+  height: 100%;
+  background-color: #173f5f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+ ul{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  padding: 10%;
+}
+
+
+.card{
+  margin: 5px;
+  flex: 1 1 auto;
+  list-style: none;
+  display: inline-block;
+  background-color: #4b5970;
+  border:  5px solid #ED553D;
+  border-radius: 20px;
+  /* #95c17d */
+  width: calc((100% - 45px) / 4);
+  height: calc((100% - 45px) / 4);
+  /* text-align: center; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+span.img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: #ED553D;
+  font-size: 4em;
+/* #4b5970 */
+}
+span.img__back{
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: #ED553D;
+  /* javascript will hide the content and eliminate the img class*/
+}
+
+/* the onclick has to be implemented on JavaScript to open and close the card */
+span.img:hover{
+  transition-delay: 0.5s;
+  transform: scale(0.5, 0.5);
 }
