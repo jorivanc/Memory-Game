@@ -1,0 +1,46 @@
+@media screen and (max-width: 600px){
+  h1{
+    padding-top: 2em;
+    font-size: 2.5em;
+  }
+  .moves__container, .timer__container{
+    font-size: 1.2em;
+  }
+  ul{
+   padding-left: 10%;
+   padding-right: 10%;
+ }
+ .card{
+   border-radius: 20px;
+   font-size: 2.5em;
+ }
+ li.face__down{
+  border-radius: 20px;
+ }
+ li.show__Animation{
+   font-size: 3.5em;
+ }
+  #rating{
+    font-size: 1.2em;
+    padding: 1em;
+  }
+  #reset{
+    font-size: 1.5em;
+    margin-bottom: 3em;
+  }
+  #win__message__popup{
+    font-size: 1.2em;
+    min-width: 210px;
+    width: 70%;
+    height: 60%;
+    border-radius: 20px;
+  }
+  #win__message__popup h2{
+    font-size: 1.8em;
+  }
+  #continue__button{
+    width: 5em;;
+    font-size: 1.2em;
+    border-radius: 0.25em;
+  }
+}
