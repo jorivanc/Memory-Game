@@ -6,36 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/style.css">
-  <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <link rel="stylesheet" href="css/responsive.css">
   </head>
   <body>
     <div class="container">
-
       <h1>Memory Game</h1>
-
+      <section class="info__container">
+          <div class="moves__container">
+              Moves: <span id="moves"> 0 </span>
+          </div>
+          <div class="timer__container">
+              Time lapsed: <span id="timer"> 00:00 </span>
+          </div>
+      </section>
         <ul class="board">
-          <!--
-          class img specifies that the card is face up and will deal with the size of the image container and animations
-          class img__character is responsible for switching between the empty image and the character image when the card is flipped -->
-          <li class="card"> <span class="img__trebol img"> ☘ </span> </li>
-          <li class="card"> <span class="img__beer img"> 🍺 </span> </li>
-          <li class="card"> <span class="img__trebol img"> ☘ </span> </li>
-          <li class="card"> <span class="img__umbrella img"> ☔ </span> </li>
-          <li class="card"> <span class="img__trex img"> 🦖 </span> </li>
-          <li class="card"> <span class="img__heart img"> 💜 </span> </li>
-          <li class="card"> <span class="img__alien img"> 👽 </span> </li>
-          <li class="card"> <span class="img__skull img"> ☠ </span> </li>
-          <li class="card"> <span class="img__umbrella img"> ☔ </span> </li>
-          <li class="card"> <span class="img__heart img"> 💜 </span> </li>
-          <li class="card"> <span class="img__butterfly img"> 🦋 </span> </li>
-          <li class="card"> <span class="img__beer img"> 🍺 </span> </li>
-          <li class="card"> <span class="img__trex img"> 🦖 </span> </li>
-          <li class="card"> <span class="img__alien img"> 👽 </span> </li>
-          <li class="card"> <span class="img__butterfly img"> 🦋 </span> </li>
-          <li class="card"> <span class="img__back"> <!--☔ --></span> </li>
+          <!-- Cards will be inserted here -->
         </ul>
-
+        <div id="rating__container">
+          <p id="rating"> ⭐ ⭐ ⭐ </p>
+        </div>
+        <div id="reset__container">
+          <p id="reset" title="Resets the game">&#x21bb;</p>
+        </div>
        </div>  <!-- end .container -->
-    <!-- <script src="js/scripts.js"></script> -->
+       <div id="win__message__popup">
+           <h2>GREAT JOB !!</h2>
+           <p id="wm__rating">Rating: </p>
+           <p id="wm__moves">Moves: </p>
+           <p id="wm__time">Time: </p>
+           <h3 id="continue__button">Continue</h3>
+       </div>
+    <script src="js/scripts.js"></script>
   </body>
 </html>
+
+
+
+
+<!--
+class img specifies that the card is face up and will deal with the size of the image container and animations
+class img__character is responsible for switching between the empty image and the character image when the card is flipped
+class matched so it will eliminate the event listener of that card or disable-->
+<!--
+<li data-type="clover" class="card face__down">  ☘  </li>
+<li data-type="beer" class="card face__down">  🍺  </li>
+<li data-type="clover" class="card">  ☘  </li>
+<li data-type="umbrella" class="card">  ☔  </li>
+<li data-type="trex" class="card">  🦖  </li>
+<li data-type="heart" class="card">  💜  </li>
+<li data-type="alien" class="card">  👽  </li>
+<li data-type="skull" class="card">  ☠  </li>
+<li data-type="umbrella" class="card">  ☔  </li>
+<li data-type="heart" class="card">  💜  </li>
+<li data-type="butterfly" class="card">  🦋  </li>
+<li data-type="beer" class="card">  🍺  </li>
+<li data-type="trex" class="card">  🦖  </li>
+<li data-type="alien" class="card">  👽  </li>
+<li data-type="butterfly" class="card">  🦋  </li>
+<li data-type="umbrella" class="card face__down">  ☔  </li> -->
