@@ -1,10 +1,8 @@
-// var cards = ['🍺','🍺','☘','☘','☆','☆','☠','☠','☔','☔','☻','☻','💜','💜','👽','👽'];
-
 // CARD Object declaration
-   function card(symbol,symbolDescription){
-     this.symbol = symbol;
-     this.symbolDescription = symbolDescription;
-    }
+  function card(symbol,symbolDescription){
+    this.symbol = symbol;
+    this.symbolDescription = symbolDescription;
+  }
 
 // SHUFFLES AN ARRAY (of cards) using Fisher–Yates algorithm
   function shuffleArray(series){
@@ -16,15 +14,16 @@
     }
   }//enf funcion shuffleArray
 
+// LOADS CARDS TO THE BOARD
   function loadCardsToHtml(series){
     let msgHTML = "";
     for ( let card of series) {
-      msgHTML += `<li data-type="${card.symbolDescription}" class="card face__down"> ${card.symbol} </li> \n`;
+      msgHTML += `<li data-type="${card.symbolDescription}" class="card face__down" alt="${card.symbolDescription}"> ${card.symbol} </li> \n`;
     }
     board.innerHTML = msgHTML;
   }//end loadCardsToHtml
 
-// HIDES AND RESETS CONTENT WIN POPUP WINDOW after wining a game
+// HIDES AND RESETS CONTENT IN WIN POPUP WINDOW after wining a game
   function hideWinPopupWindow(){
     // disable reset game button while popup window is being displayed
     const reset = document.getElementById("reset");
@@ -65,6 +64,7 @@
       displayWinMessage();
     }
   }
+
   function updateTimerOnScreen(){
     seconds++;
     let stringTime = "";
@@ -87,7 +87,7 @@
   timer = setInterval(updateTimerOnScreen,1000);
   }
 
-  function updatedMovesOnScreen(){
+  function updateMovesOnScreen(){
     counterMoves++;
     if (counterMoves==1){
       startTimer() ;
@@ -148,13 +148,11 @@ function respondBoardClick(event){
             cardsToMatch[1].classList.toggle('show__Animation');
             setTimeout(checkMatch,800);
             // once two cards have been clicked the number of moves must be updated and depending on the number of moves the ratings will change
-            updatedMovesOnScreen();
+            updateMovesOnScreen();
             updateRatingsOnScreen();
-
             }
-        }//end IF
-
-}
+        }
+    }
 
 function resetGame(){
   counterMoves = 0;
@@ -169,6 +167,15 @@ function resetGame(){
   const timerDisplay = document.getElementById('timer');
   timerDisplay.textContent = "00:00";
   play();
+}
+
+function play(){
+  shuffleArray(cards);
+  loadCardsToHtml(cards);
+  updateRatingsOnScreen();
+  board.addEventListener('click', respondBoardClick);
+  const reset = document.getElementById("reset");
+  reset.addEventListener('click', resetGame);
 }
 
 let seconds = 0;
@@ -195,16 +202,6 @@ cards[12] = new card('☠', 'skull');
 cards[13] = new card('☠', 'skull');
 cards[14] = new card('🦋', 'butterfly');
 cards[15] = new card('🦋', 'butterfly');
-
 let board = document.querySelector("ul.board");
-
-function play(){
-  shuffleArray(cards);
-  loadCardsToHtml(cards);
-  updateRatingsOnScreen();
-  board.addEventListener('click', respondBoardClick);
-  const reset = document.getElementById("reset");
-  reset.addEventListener('click', resetGame);
-}
 
 document.addEventListener("DOMContentLoaded", play());

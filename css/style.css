@@ -1,3 +1,7 @@
+/*
+ * Style.css by default will format content for mobile sized devices < 600px
+ */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,10 +16,11 @@ html, body{
 }
 
 h1{
-  padding: 1em;
+  padding-top: 2em;
+  font-size: 2.5em;
   color: #3caea3;
-  font-size: 3em;
 }
+
 .container{
   min-width: 310px;
   width: 100%;
@@ -28,41 +33,21 @@ h1{
   text-align: center;
 }
 
-.info__container{
-  display: flex;
-  justify-content: space-around;
-  width: 80%;
-  margin: 1.5em;
-}
-
-.moves__container{
-  font-size: 2em;
-  color: #3caea3;
-}
-/* #moves{
-
-} */
-.timer__container{
-  font-size: 2em;
-  color: #3caea3;
-}
-/* .timer{
-
-} */
-
+/*
+ * Styles for board and cards
+ */
  ul{
-  /* background-color: pink; */
+  background-color: #102e47;
+  margin-left: 10%;
+  margin-right: 10%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  width: 100%;
+  width: 80%;
   height: 100%;
-  padding-left: 20%;
-  padding-right: 20%;
   align-content: center;
-
+  border-radius: 20px;
 }
-
 
 .card{
   cursor: pointer;
@@ -71,40 +56,77 @@ h1{
   list-style: none;
   display: inline-block;
   background-color: #ED553D;
-  border-radius: 30px;
+  border-radius: 20px;
   width: calc((100% - 45px) / 4);
   height: calc((100% - 45px) / 4);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 4em; /*added*/
+  font-size: 2.5em;
 }
 
 .card.clicked{
+  animation-name: card__clicked;
+  animation-duration: 0.03s;
   pointer-events: none;
+  background-color: #f28080;
+}
+
+@keyframes card__clicked {
+  from{background-color: #ED553D;}
+  to{ background-color: #102e47;}
 }
 
 li.face__down{
- border-radius: 30px;
- background-color: #ED553D;
- font-size: 0;
+  animation-name: card__noMatch;
+  animation-duration: 1s;
+  border-radius: 20px;
+  background-color: #ED553D;
+  font-size: 0;
+}
+
+@keyframes card__noMatch {
+  from{background-color: white;}
+  to{ background-color: #ED553D;}
 }
 
 /* makes sure that if you have found a match you cannot click on those cards again */
 li.disable{
   pointer-events: none;
-  background-color: #f28080;
   opacity: 0.2;
+  background-color: #102e47 !important;
 }
 
 li.show__Animation{
-  font-size: 5em;
+  font-size: 3.5em;
   background-color: #f28080;
 }
+
+/*
+ * Styles for the information about moves and timer
+ */
+ .info__container{
+   display: flex;
+   justify-content: space-around;
+   width: 80%;
+   margin: 1.5em;
+   padding-top: 1em;
+ }
+
+ .moves__container{
+   font-size: 1.2em;
+   color: #3caea3;
+ }
+
+ .timer__container{
+   font-size: 1.2em;
+   color: #3caea3;
+ }
+
 #rating{
   color: yellow;
-  font-size: 1.6em;
-  padding: 1em;
+  font-size: 1.2em;
+  padding-top: 1em;
 }
 
 #reset__container{
@@ -112,45 +134,50 @@ li.show__Animation{
   display: flex;
   justify-content: flex-end;
 }
+
 #reset{
   color: yellow;
   cursor: pointer;
-  font-size: 2.5em;
+  font-size: 1.5em;
   margin-bottom: 1em;
 }
+
 #reset.disable{
   pointer-events: none;
   opacity: 0.2;
 }
 
+/*
+ * Styles for the win popup window
+ */
 #win__message__popup{
   transform: rotate(0.99turn);
   visibility: hidden;
-  color: #6df2e5;
+  color: #0d304c;
   position: fixed;
-  top: 10%;
+  top: 20%;
   left: 15%;
-  font-size: 2em;
-  background-color: #0d304c;
+  font-size: 1.2em;
+  background-color: #6df2e5;
   width: 70%;
-  height: 70%;
+  height: 60%;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  border-radius: 30px;
+  border-radius: 20px;
   opacity: 0.85;
+  min-width: 210px;
   z-index: 20;
 }
 
 #win__message__popup h2{
-  font-size: 1.5em;
+  font-size: 1.8em;
   padding-top: 1em;
   padding-bottom: 0.5em;
-  color: #fff960;
+  color: #0d304c;
 }
-
 
 #win__message__popup.visible{
   visibility: visible;
@@ -160,10 +187,10 @@ li.show__Animation{
   padding: 0.5em;
   box-shadow:  2px 2px 3px 0px rgb(0,0,0, 0.7);
   text-align: center;
-  width: 6em;;
+  width: 5em;;
   font-size: 1.2em;
-  border-radius: 0.5em;
-  background-color: #ED553D;
-  color: #0d304c;
+  border-radius: 0.25em;
+  background-color: #0d304c;
+  color: #6df2e5;
   cursor: pointer;
 }

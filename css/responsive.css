@@ -1,46 +1,94 @@
-@media screen and (max-width: 600px){
+/* Media query responsible to format content to ipad sized devices ~600px-1100px wide */
+@media screen and (min-width: 600px){
   h1{
-    padding-top: 2em;
-    font-size: 2.5em;
+    padding: 1em;
+    font-size: 3em;
+  }
+  .info__container{
+    width: 70%;
+    margin-top: 0.2em;
   }
   .moves__container, .timer__container{
-    font-size: 1.2em;
+    font-size: 1.6em;
   }
   ul{
-   padding-left: 10%;
-   padding-right: 10%;
- }
- .card{
-   border-radius: 20px;
-   font-size: 2.5em;
- }
- li.face__down{
-  border-radius: 20px;
- }
- li.show__Animation{
+    width: 75%;
+  }
+  .card{
    font-size: 3.5em;
- }
+  }
+  li.show__Animation{
+   font-size: 4.5em;
+  }
   #rating{
-    font-size: 1.2em;
-    padding: 1em;
+    font-size: 1.4em;
+    margin: 0.5em;
   }
   #reset{
-    font-size: 1.5em;
-    margin-bottom: 3em;
+    font-size: 2em;
+    margin-bottom: 1.5em;
   }
   #win__message__popup{
-    font-size: 1.2em;
-    min-width: 210px;
+    left: 25%;
+    width: 50%;
+    top: 10%;
+    font-size: 1.8em;
+    border-radius: 30px;
+  }
+  #win__message__popup h2{
+    font-size: 1.5em;
+  }
+}
+
+/* Media query responsible to format content to laptop and desktop sized devices >1100px wide */
+@media screen and (min-width: 1100px){
+  h1{
+    padding: 0.7em;
+    font-size: 3.5em;
+  }
+  .info__container{
     width: 70%;
-    height: 60%;
-    border-radius: 20px;
+    margin-top: 0.2em;
+  }
+  .moves__container, .timer__container{
+    font-size: 1.8em;
+  }
+  ul{
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 30px;
+    width: 50%;
+  }
+  .card{
+   border-radius: 30px;
+   font-size: 4em;
+  }
+  li.face__down{
+  border-radius: 30px;
+  }
+  li.show__Animation{
+   font-size: 5em;
+  }
+  #rating{
+    font-size: 1.6em;
+    margin: 0.2em;
+  }
+  #reset{
+    font-size: 2.5em;
+    margin-bottom: 1em;
+  }
+  #win__message__popup{
+    left: 30%;
+    width: 40%;
+    font-size: 2.2em;
+    height: 70%;
+    border-radius: 30px;
   }
   #win__message__popup h2{
     font-size: 1.8em;
   }
   #continue__button{
-    width: 5em;;
-    font-size: 1.2em;
-    border-radius: 0.25em;
+    width: 6em;;
+    border-radius: 0.5em;
   }
 }
