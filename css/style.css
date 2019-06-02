@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 html, body{
@@ -12,8 +13,11 @@ html, body{
 
 h1{
   padding: 1em;
+  color: #3caea3;
+  font-size: 3em;
 }
 .container{
+  min-width: 310px;
   width: 100%;
   height: 100%;
   background-color: #173f5f;
@@ -24,55 +28,142 @@ h1{
   text-align: center;
 }
 
+.info__container{
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin: 1.5em;
+}
+
+.moves__container{
+  font-size: 2em;
+  color: #3caea3;
+}
+/* #moves{
+
+} */
+.timer__container{
+  font-size: 2em;
+  color: #3caea3;
+}
+/* .timer{
+
+} */
 
  ul{
+  /* background-color: pink; */
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   width: 100%;
   height: 100%;
-  padding: 10%;
+  padding-left: 20%;
+  padding-right: 20%;
+  align-content: center;
+
 }
 
 
 .card{
+  cursor: pointer;
   margin: 5px;
   flex: 1 1 auto;
   list-style: none;
   display: inline-block;
-  background-color: #4b5970;
-  border:  5px solid #ED553D;
-  border-radius: 20px;
-  /* #95c17d */
+  background-color: #ED553D;
+  border-radius: 30px;
   width: calc((100% - 45px) / 4);
   height: calc((100% - 45px) / 4);
-  /* text-align: center; */
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 4em; /*added*/
 }
 
-span.img{
+.card.clicked{
+  pointer-events: none;
+}
+
+li.face__down{
+ border-radius: 30px;
+ background-color: #ED553D;
+ font-size: 0;
+}
+
+/* makes sure that if you have found a match you cannot click on those cards again */
+li.disable{
+  pointer-events: none;
+  background-color: #f28080;
+  opacity: 0.2;
+}
+
+li.show__Animation{
+  font-size: 5em;
+  background-color: #f28080;
+}
+#rating{
+  color: yellow;
+  font-size: 1.6em;
+  padding: 1em;
+}
+
+#reset__container{
+  width: 80%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  width: 100%;
-  height: 100%;
-  background-color: #ED553D;
-  font-size: 4em;
-/* #4b5970 */
+  justify-content: flex-end;
 }
-span.img__back{
-  border-radius: 10px;
-  width: 100%;
-  height: 100%;
-  background-color: #ED553D;
-  /* javascript will hide the content and eliminate the img class*/
+#reset{
+  color: yellow;
+  cursor: pointer;
+  font-size: 2.5em;
+  margin-bottom: 1em;
+}
+#reset.disable{
+  pointer-events: none;
+  opacity: 0.2;
 }
 
-/* the onclick has to be implemented on JavaScript to open and close the card */
-span.img:hover{
-  transition-delay: 0.5s;
-  transform: scale(0.5, 0.5);
+#win__message__popup{
+  transform: rotate(0.99turn);
+  visibility: hidden;
+  color: #6df2e5;
+  position: fixed;
+  top: 10%;
+  left: 15%;
+  font-size: 2em;
+  background-color: #0d304c;
+  width: 70%;
+  height: 70%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 30px;
+  opacity: 0.85;
+  z-index: 20;
+}
+
+#win__message__popup h2{
+  font-size: 1.5em;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  color: #fff960;
+}
+
+
+#win__message__popup.visible{
+  visibility: visible;
+}
+
+#continue__button{
+  padding: 0.5em;
+  box-shadow:  2px 2px 3px 0px rgb(0,0,0, 0.7);
+  text-align: center;
+  width: 6em;;
+  font-size: 1.2em;
+  border-radius: 0.5em;
+  background-color: #ED553D;
+  color: #0d304c;
+  cursor: pointer;
 }
