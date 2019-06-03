@@ -3,12 +3,12 @@ Browser-based card matching game (also known as Concentration)
 
 ![Screenshot](memGamScreenshot.jpg)
 
-##How to play.
+## How to play.
 1. CLick/Open a card.
 2. Open another card. If they match, then return to step 1.  Otherwise remember the cards previously opened and try to find pairs of matching cards.
 3. Now do this until all the cards have been opened in the minimum amount of moves and time.
 
-##Future Improvements.
+## Future Improvements.
 - Implement a _Settings_ option:
   * Add the option to set a countdown timer. (just as a challenge for the player)
   * Let the user set a difficulty level (pick the number of cards). See **Note.**
@@ -17,7 +17,7 @@ Browser-based card matching game (also known as Concentration)
 - Implement a Score Panel: Allow users to input their names and record their scores and display a panel with those result ordered from best to ..... not so good.
 
 
-####Note
+#### Note
 The function loadCardsToHtml allows to load a series/array of cards of any length to the board. So it would be possible to allow players to select the amount of cards (set the difficulty) to play, as long as there are an even number of cards.
 ```
 function loadCardsToHtml(series){
@@ -36,7 +36,7 @@ cards[1] = new card('🍺', 'beer');
 // 2n cards commented out
 ...
 ```
-##Specifications met
+## Specifications met
 1. Memory Game logic
 2. Congratulations Popup
 3. Restart button
