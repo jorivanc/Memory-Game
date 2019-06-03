@@ -1,7 +1,7 @@
 # Memory-Game
 Browser-based card matching game (also known as Concentration)
 
-![Screenshot](https://github.com/jorivanc/Memory-Game/memGamScreenShot.jpg)
+![Screenshot](memGamScreenshot.jpg)
 
 ##How to play.
 1. CLick/Open a card.
